@@ -1,7 +1,5 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+
 PokemonApp.Pokemon = function (pokemonUri) {
-	// 							// api/v1/19
 	this.id = PokemonApp.Pokemon.idFromUri(pokemonUri);
 };
 
@@ -11,10 +9,23 @@ PokemonApp.Pokemon.prototype.render = function () {
 	$.ajax({
 		url: "/api/pokemon/" + this.id,
 		success: function (responce) {
+			console.log(responce);
 			$(".js-pkmn-name").text(responce.name);
 			$(".js-pkmn-number").text("# " + responce.pkdx_id);
 			$(".js-pkmn-height").text(responce.height);
 			$(".js-pkmn-weight").text(responce.weight);
+			$(".js-pkmn-types").empty();
+			$(".js-pkmn-types").text(responce.types.forEach(function (type) {
+				$(".js-pkmn-types").append(type.name + ", ");
+
+			}));
+			$(".js-pkmn-hp").text(responce.hp);
+			$(".js-pkmn-attack").text(responce.attack);
+			$(".js-pkmn-defense").text(responce.defense);
+			$(".js-pkmn-special-a").text(responce.sp_atk);
+			$(".js-pkmn-special-d").text(responce.sp_def);
+			$(".js-pkmn-speed").text(responce.speed);
+			
 			$(".js-pokemon-modal").modal("show");
 		},
 		error: function() {
