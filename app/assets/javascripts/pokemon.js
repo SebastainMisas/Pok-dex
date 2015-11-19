@@ -11,11 +11,15 @@ PokemonApp.Pokemon.prototype.render = function () {
 	$.ajax({
 		url: "/api/pokemon/" + this.id,
 		success: function (responce) {
-			console.log(responce);
-		}
+			$(".js-pkmn-name").text(responce.name);
+			$(".js-pkmn-number").text("# " + responce.pkdx_id);
+			$(".js-pkmn-height").text(responce.height);
+			$(".js-pkmn-weight").text(responce.weight);
+			$(".js-pokemon-modal").modal("show");
+		},
 		error: function() {
 			alert("You fucked up!");
-		}
+		},
 	});
 };
 
