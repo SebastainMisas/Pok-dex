@@ -1,4 +1,3 @@
-Pokemon Components
-==================
+Pokemon Index 
+=================
 
-An exercise in structuring your browser JavaScript in a Rails application.
