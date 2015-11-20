@@ -27,6 +27,15 @@ h1 {
   color: #ffc100;
   -webkit-text-stroke: 3px #333996;
 }
+h2 {
+  font-size: 20px;
+  text-align: left;
+  margin: 10px;
+  font-family: 'pokemon_solidnormal', Helvetica, sans-serif;
+  color: #ffc100;
+  -webkit-text-stroke: 1.5px #333996;
+  width: 100px;
+}
 
 .pokedex-list {
   width: 300px;

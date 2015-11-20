@@ -4,8 +4,7 @@
 <ul class="pokedex-list">
   <% @pokemon.each do |pkmn| %>
     <li>
-      <button class="js-show-pokemon btn btn-link"
-          data-pokemon-uri="<%= pkmn["resource_uri"] %>">
+      <button class="js-show-pokemon btn btn-link"data-pokemon-uri="<%= pkmn["resource_uri"] %>">
         <%= pkmn["name"] %>
       </button>
     </li>
@@ -22,25 +21,31 @@
         <button class="close" data-dismiss="modal">
           <span>&times;</span>
         </button>
-
+        
         <h3 class="modal-title">
-          <span class="js-pkmn-name"></span>
-          <small class="js-pkmn-number"></small>
-        </h3>
+          <h2 class="js-pkmn-name"></h2>
+          <h2 class="js-pkmn-number"></h2>
+        </h3><br>
+        <button type="button" data-toggle="modal" data-target=".js-evolutions-modal" class="js-show-evolutions btn-link">Evolutions</button><br>
+        <img class="js-sprites-img" src="">
       </div><!-- .modal-header -->
 
       <div class="modal-body">
         <ul>
-          <span>Height:</span>
-          <span class="js-pkmn-height"></span>
-
-          <span>Weight:</span>
-          <span class="js-pkmn-weight"></span>
-          
+          <h2>Description:</h2>
+          <p class="js-pkmn-description"></p>
         </ul>
 
+
         <ul class= "pkmn stats">
-          <span>Types:</span>
+          <h2>Stats:</h2><br>
+          <span>Height:</span>
+          <span class="js-pkmn-height"></span><br>
+
+          <span>Weight:</span>
+          <span class="js-pkmn-weight"></span><br>
+
+          <span>Type(s):</span>
           <span class="js-pkmn-types"></span><br>
 
           <span>HP:</span>
@@ -61,8 +66,28 @@
           <span>Speed:</span>
           <span class="js-pkmn-speed"></span><br>
         </ul>
+      
       </div><!-- .modal-body -->
 
     </div><!-- .modal-content -->
   </div><!-- .modal-dialog -->
 </div><!-- .modal -->
+
+<div class="modal fade js-evolutions-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h2>Evolutions:</h2>
+      </div>
+
+      <div class="modal-body">
+        <span class="js-evo-name"></span><br>
+        <img class="js-evo-img" src="">
+      </div>
+    </div>
+  </div>
+</div>
